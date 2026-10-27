@@ -25,7 +25,7 @@
 <body class="antialiased min-h-screen flex flex-col justify-between">
 
   <!-- ============================================================
-       COMPONENT: Global Navigation (COMP-NAV)
+       COMPONENT: Global Navigation (COMP-NAV) - 5개 페이지 연동
        ============================================================ -->
   <nav class="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
     <div class="max-w-6xl mx-auto px-6 h-18 flex justify-between items-center py-5">
@@ -35,11 +35,10 @@
       <!-- Right Side: Desktop Menu + Theme Toggle + Mobile Hamburger -->
       <div class="flex items-center gap-3">
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <!-- Desktop Menu (5개 페이지) -->
+        <div class="hidden md:flex space-x-7 text-sm font-medium items-center">
           <a href="index.html" class="nav-link text-gray-400 hover:text-white transition-colors">메인</a>
           <a href="interests.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">관심 분야</a>
-          <a href="works.html" class="nav-link text-gray-400 hover:text-white transition-colors">만든 작품</a>
           <a href="hobbies.html" class="nav-link text-gray-400 hover:text-white transition-colors">취미</a>
           <a href="history.html" class="nav-link text-gray-400 hover:text-white transition-colors">이력</a>
           <a href="info.html" class="nav-link text-gray-400 hover:text-white transition-colors">공개 정보</a>
@@ -61,11 +60,10 @@
       </div>
     </div>
 
-    <!-- Mobile Menu Dropdown -->
+    <!-- Mobile Menu Dropdown (5개 페이지) -->
     <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
       <a href="index.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">메인</a>
       <a href="interests.html" class="block text-sm text-white font-semibold py-1">관심 분야</a>
-      <a href="works.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">만든 작품</a>
       <a href="hobbies.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">취미</a>
       <a href="history.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
       <a href="info.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">공개 정보</a>
@@ -97,7 +95,7 @@
           </div>
           <h2 class="text-xl font-bold text-white mb-3">시스템 아키텍처 & 백엔드</h2>
           <p class="text-gray-400 text-sm leading-relaxed mb-6">
-            대규모 트래픽에서도 데이터 무결성과 빠른 응답성을 보장하는 데이터베이스 모델링과 계층형 설계에 깊은 관심을 두고 있습니다.
+            대규모 환경에서도 데이터 무결성과 빠른 응답성을 보장하는 데이터베이스 모델링과 계층형 설계에 깊은 관심을 두고 있습니다.
           </p>
           <div class="flex flex-wrap gap-2 text-xs text-gray-500">
             <span class="px-2.5 py-1 rounded bg-white/5">DB 모델링</span>
@@ -129,7 +127,7 @@
           </div>
           <h2 class="text-xl font-bold text-white mb-3">인터랙티브 웹 & 디자인</h2>
           <p class="text-gray-400 text-sm leading-relaxed mb-6">
-            웹 표준과 웹 접근성을 준수하면서도, 부드러운 애니메이션과 직관적인 반응성을 주는 모던 웹 인터페이스를 탐구합니다.
+            웹 표준과 접근성을 준수하면서도, 부드러운 애니메이션과 직관적인 반응성을 주는 모던 웹 인터페이스를 탐구합니다.
           </p>
           <div class="flex flex-wrap gap-2 text-xs text-gray-500">
             <span class="px-2.5 py-1 rounded bg-white/5">웹 표준</span>
@@ -143,12 +141,12 @@
       <!-- 하단 안내 배너 -->
       <div class="mt-12 p-8 rounded-3xl border border-white/5 bg-surface flex flex-col md:flex-row gap-6 items-center justify-between">
         <div>
-          <h2 class="text-lg font-bold text-white mb-1">이러한 관심을 바탕으로 무엇을 만들었을까요?</h2>
-          <p class="text-gray-400 text-sm">관심 분야의 기술들을 직접 손으로 구현해 본 실제 작품들을 확인해 보세요.</p>
+          <h2 class="text-lg font-bold text-white mb-1">일상의 영감이 되는 취미도 확인해 보세요</h2>
+          <p class="text-gray-400 text-sm">알고리즘 퍼즐, 기술 블로그 탐독, 음악 감상 등의 활동을 소개합니다.</p>
         </div>
-        <a href="works.html"
+        <a href="hobbies.html"
           class="px-6 py-3 bg-white text-black font-semibold rounded-full text-sm hover:bg-gray-200 transition-colors whitespace-nowrap flex items-center gap-2">
-          만든 작품 보러가기 <i class="fa-solid fa-arrow-right text-xs"></i>
+          취미 보러가기 <i class="fa-solid fa-arrow-right text-xs"></i>
         </a>
       </div>
 

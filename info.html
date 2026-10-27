@@ -25,7 +25,7 @@
 <body class="antialiased min-h-screen flex flex-col justify-between">
 
   <!-- ============================================================
-       COMPONENT: Global Navigation (COMP-NAV)
+       COMPONENT: Global Navigation (COMP-NAV) - 5개 페이지 연동
        ============================================================ -->
   <nav class="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
     <div class="max-w-6xl mx-auto px-6 h-18 flex justify-between items-center py-5">
@@ -35,11 +35,10 @@
       <!-- Right Side: Desktop Menu + Theme Toggle + Mobile Hamburger -->
       <div class="flex items-center gap-3">
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <!-- Desktop Menu (5개 페이지) -->
+        <div class="hidden md:flex space-x-7 text-sm font-medium items-center">
           <a href="index.html" class="nav-link text-gray-400 hover:text-white transition-colors">메인</a>
           <a href="interests.html" class="nav-link text-gray-400 hover:text-white transition-colors">관심 분야</a>
-          <a href="works.html" class="nav-link text-gray-400 hover:text-white transition-colors">만든 작품</a>
           <a href="hobbies.html" class="nav-link text-gray-400 hover:text-white transition-colors">취미</a>
           <a href="history.html" class="nav-link text-gray-400 hover:text-white transition-colors">이력</a>
           <a href="info.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">공개 정보</a>
@@ -61,11 +60,10 @@
       </div>
     </div>
 
-    <!-- Mobile Menu Dropdown -->
+    <!-- Mobile Menu Dropdown (5개 페이지) -->
     <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
       <a href="index.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">메인</a>
       <a href="interests.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">관심 분야</a>
-      <a href="works.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">만든 작품</a>
       <a href="hobbies.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">취미</a>
       <a href="history.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
       <a href="info.html" class="block text-sm text-white font-semibold py-1">공개 정보</a>
@@ -83,18 +81,18 @@
         <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">About This Page</p>
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-white">공개 정보 <span class="text-gray-600">Public Info</span></h1>
 
-        <!-- 페이지의 대상과 목적 (한 문장 명세 - T01-C03 통과 기준) -->
+        <!-- 페이지의 대상과 목적 (한 문장 명세 - T01-C03) -->
         <div class="p-6 md:p-8 rounded-3xl bg-surface border border-accent/20 mb-8 shadow-lg">
           <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-2">페이지의 대상과 목적</p>
           <p id="page-purpose" class="text-white text-base md:text-lg leading-relaxed font-medium">
-            방문자에게 내가 어떤 관심 분야와 취미를 가졌고 어떤 작품을 만드는 사람인지 진솔하게 보여 주기 위해 만든 페이지입니다.
+            방문자에게 내가 어떤 관심 분야와 취미를 가졌고 어떤 이력을 쌓아왔는지 진솔하게 보여 주기 위해 만든 페이지입니다.
           </p>
         </div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
 
-        <!-- 공개하는 정보 (3개 이상 - T01-C04 통과 기준) -->
+        <!-- 공개할 정보 (3개 이상 - T01-C04) -->
         <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg flex flex-col justify-between">
           <div>
             <h2 class="text-base font-bold mb-5 text-accent uppercase tracking-widest flex items-center gap-2">
@@ -111,15 +109,15 @@
               <li class="flex items-start gap-3">
                 <span class="w-2 h-2 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
                 <div>
-                  <strong class="text-white">만든 작품:</strong>
-                  <p class="text-gray-400 text-xs mt-0.5">과외 매칭 플랫폼 TutorBridge, 첫 웹앱 Firstboot-1 등 실제 구현 결과물</p>
+                  <strong class="text-white">취미:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">알고리즘 문제 풀기, 기술 블로그 탐독, 산책과 음악 감상</p>
                 </div>
               </li>
               <li class="flex items-start gap-3">
                 <span class="w-2 h-2 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
                 <div>
-                  <strong class="text-white">취미:</strong>
-                  <p class="text-gray-400 text-xs mt-0.5">알고리즘 문제 풀기, 기술 블로그 탐독, 산책과 음악 감상</p>
+                  <strong class="text-white">이력:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">학사 전공 및 정보처리기사 CS 학습 타임라인</p>
                 </div>
               </li>
             </ul>
@@ -129,7 +127,7 @@
           </p>
         </div>
 
-        <!-- 공개하지 않을 정보 (3개 이상 - T01-C05 통과 기준) -->
+        <!-- 공개하지 않을 정보 (3개 이상 - T01-C05) -->
         <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg flex flex-col justify-between">
           <div>
             <h2 class="text-base font-bold mb-5 text-gray-400 uppercase tracking-widest flex items-center gap-2">
@@ -168,7 +166,7 @@
 
       <!-- 무인증 및 시크릿 창 즉시 열람 보장 알림 (T01-C01) -->
       <div class="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/5 text-xs text-gray-400 leading-relaxed space-y-2">
-        <p><i class="fa-solid fa-shield-halved text-accent mr-1"></i> <strong>무인증 원칙:</strong> 본 사이트의 모든 페이지와 GitHub 소스 코드는 계정 생성, 로그인, 인증, 초대, 비밀번호, OAuth, CAPTCHA 없이 <strong>새 시크릿 창에서 즉시 열람</strong>할 수 있습니다.</p>
+        <p><i class="fa-solid fa-shield-halved text-accent mr-1"></i> <strong>무인증 원칙:</strong> 본 사이트의 5개 페이지와 GitHub 소스 코드는 계정 생성, 로그인, 인증, 초대, 비밀번호, OAuth, CAPTCHA 없이 <strong>새 시크릿 창에서 즉시 열람</strong>할 수 있습니다.</p>
       </div>
 
     </div>
