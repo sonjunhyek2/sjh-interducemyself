@@ -84,9 +84,9 @@
 
         <!-- 페이지의 대상과 목적 (한 문장 명세 - T01-C03) -->
         <div class="p-6 md:p-8 rounded-3xl bg-surface border border-accent/20 mb-8 shadow-lg">
-          <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-2">페이지의 목적</p>
+          <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-2">페이지의 대상과 목적</p>
           <p id="page-purpose" class="text-white text-base md:text-lg leading-relaxed font-medium">
-            전체적으로 보여주는 나의 소개 페이지 목록입니다.
+            방문자 및 함께 일할 동료에게 내가 어떤 관심 분야와 취미를 가졌고 어떤 배움의 이력을 쌓아왔는지 진솔하게 보여 주기 위해 만든 페이지입니다.
           </p>
         </div>
       </div>
@@ -128,8 +128,49 @@
           </p>
         </div>
 
+        <!-- 공개하지 않을 정보 (3개 이상 - T01-C05) -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg flex flex-col justify-between">
+          <div>
+            <h2 class="text-base font-bold mb-5 text-gray-400 uppercase tracking-widest flex items-center gap-2">
+              <i class="fa-solid fa-eye-slash text-gray-500"></i> 공개하지 않을 정보 (3개)
+            </h2>
+            <ul class="space-y-4 text-sm text-gray-300">
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-gray-600 mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">전화번호:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">개인 연락처 보호를 위해 페이지와 소스 코드에 일체 기재하지 않음</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-gray-600 mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">집 주소:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">사생활 및 상세 거주지 정보 비공개</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-gray-600 mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">학교 이름:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">특정 출신 학교 이름은 비공개 원칙에 따라 생략(전공만 표기)</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <p class="mt-6 pt-4 border-t border-white/5 text-xs text-gray-500">
+            * 비밀번호 등으로 가린 것이 아니라, 페이지 및 소스 코드에 아예 포함하지 않았습니다.
+          </p>
+        </div>
 
       </div>
+
+      <!-- 무인증 및 시크릿 창 즉시 열람 보장 알림 (T01-C01) -->
+      <div class="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/5 text-xs text-gray-400 leading-relaxed space-y-2">
+        <p><i class="fa-solid fa-shield-halved text-accent mr-1"></i> <strong>무인증 원칙:</strong> 본 사이트의 5개 페이지와 GitHub 소스 코드는 계정 생성, 로그인, 인증, 초대, 비밀번호, OAuth, CAPTCHA 없이 <strong>새 시크릿 창에서 즉시 열람</strong>할 수 있습니다.</p>
+      </div>
+
+    </div>
 
   </main>
 

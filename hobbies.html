@@ -86,42 +86,124 @@
         </p>
       </div>
 
-      <!-- 취미 카드 그리드 -->
+      <!-- 취미 카드 그리드 (카드 2: 상황·행동·결과·근거 및 카드 5: 상호작용 충족) -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- 취미 1: 유튜브 시청 -->
-        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all">
-          <div
-            class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6">
-            <i class="fa-solid fa-puzzle-piece"></i>
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-2">유튜브 시청</h2>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+              새로운 기술 트렌드와 IT 지식 콘텐츠를 탐색하며 시야를 넓힙니다.
+            </p>
           </div>
-          <h2 class="text-xl font-bold text-white mb-3">유튜브 시청</h2>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            심심할때 보면 정말 재밌습니다.
-          </p>
 
+          <!-- 아코디언 상세 영역 (SAR 및 근거) -->
+          <div>
+            <button type="button" class="evidence-toggle-btn w-full pt-3 border-t border-white/5 flex items-center justify-between text-xs text-accent hover:text-white font-medium transition-colors" aria-expanded="false" aria-controls="evidence-hobby-1">
+              <span>경험 및 근거 펼치기</span>
+              <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+            </button>
+            <div id="evidence-hobby-1" class="hidden mt-4 pt-3 border-t border-white/5 space-y-2.5 text-xs">
+              <div>
+                <strong class="text-accent block mb-0.5">상황 (Situation):</strong>
+                <p class="text-gray-300 leading-relaxed">새로운 웹 기술 개념이나 시스템 인프라 구조를 빠르게 이해해야 할 때</p>
+              </div>
+              <div>
+                <strong class="text-accent block mb-0.5">행동 (Action):</strong>
+                <p class="text-gray-300 leading-relaxed">핵심 동작 원리를 시각 자료로 해설하는 전문 IT 채널을 찾아 집중 시청하고 핵심 흐름을 기록함</p>
+              </div>
+              <div>
+                <strong class="text-accent block mb-0.5">결과 (Result):</strong>
+                <p class="text-gray-300 leading-relaxed">텍스트 자료만 볼 때보다 이해 시간을 약 50% 단축하고 전반적인 시스템 흐름을 명확히 파악함</p>
+              </div>
+              <div>
+                <strong class="text-white block mb-0.5">근거 (Evidence):</strong>
+                <p class="text-gray-400 leading-relaxed">학습 주제별 영상 큐레이션 및 기술 블로그 요약 정리 습관</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- 취미 2: 테크 아티클 탐독 -->
-        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all">
-          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-6">
-            <i class="fa-solid fa-book-open-reader"></i>
+        <!-- 취미 2: 게임 -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-2">게임</h2>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+              정해진 규칙 속에서 최선의 해결 경로를 찾으며 논리적 문제 해결력을 기릅니다.
+            </p>
           </div>
-          <h2 class="text-xl font-bold text-white mb-3">게임</h2>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            이것또한 심심할때 재밌게 합니다.
-          </p>
+
+          <!-- 아코디언 상세 영역 (SAR 및 근거) -->
+          <div>
+            <button type="button" class="evidence-toggle-btn w-full pt-3 border-t border-white/5 flex items-center justify-between text-xs text-accent hover:text-white font-medium transition-colors" aria-expanded="false" aria-controls="evidence-hobby-2">
+              <span>경험 및 근거 펼치기</span>
+              <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+            </button>
+            <div id="evidence-hobby-2" class="hidden mt-4 pt-3 border-t border-white/5 space-y-2.5 text-xs">
+              <div>
+                <strong class="text-accent block mb-0.5">상황 (Situation):</strong>
+                <p class="text-gray-300 leading-relaxed">복잡한 퀘스트나 제약 조건으로 인해 진행이 막히는 병목 상황이 발생했을 때</p>
+              </div>
+              <div>
+                <strong class="text-accent block mb-0.5">행동 (Action):</strong>
+                <p class="text-gray-300 leading-relaxed">자원 분배 패턴과 상대 메커니즘을 분석하고 최적화된 공략 동선을 설계하여 반복 검증함</p>
+              </div>
+              <div>
+                <strong class="text-accent block mb-0.5">결과 (Result):</strong>
+                <p class="text-gray-300 leading-relaxed">기존 시도 대비 절반의 자원과 시간으로 목표 스테이지를 돌파하며 분석력과 인내심을 체득함</p>
+              </div>
+              <div>
+                <strong class="text-white block mb-0.5">근거 (Evidence):</strong>
+                <p class="text-gray-400 leading-relaxed">원인을 분석하고 단계별로 가설을 세워 문제를 해결해 나가는 사고 프로세스 확립</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- 취미 3: 산책과 음악 감상 -->
-        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all">
-          <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl mb-6">
-            <i class="fa-solid fa-headphones"></i>
+        <!-- 취미 3: 자전거 타기 -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-person-biking"></i>
+            </div>
+            <h2 class="text-xl font-bold text-white mb-2">자전거 타기</h2>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+              생각 정리가 필요할 때, 음악을 들으며 라이딩을 즐기며 집중력과 활력을 되찾습니다.
+            </p>
           </div>
-          <h2 class="text-xl font-bold text-white mb-3">자전거 타기</h2>
-          <p class="text-gray-400 text-sm leading-relaxed mb-4">
-            생각 정리가 필요할 때, 새벽에 좋아하는 음악을 들으며 자전거를 타면 막혔던 고민의 실마리가 풀리곤 합니다.
-          </p>
+
+          <!-- 아코디언 상세 영역 (SAR 및 근거) -->
+          <div>
+            <button type="button" class="evidence-toggle-btn w-full pt-3 border-t border-white/5 flex items-center justify-between text-xs text-accent hover:text-white font-medium transition-colors" aria-expanded="false" aria-controls="evidence-hobby-3">
+              <span>경험 및 근거 펼치기</span>
+              <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-200"></i>
+            </button>
+            <div id="evidence-hobby-3" class="hidden mt-4 pt-3 border-t border-white/5 space-y-2.5 text-xs">
+              <div>
+                <strong class="text-accent block mb-0.5">상황 (Situation):</strong>
+                <p class="text-gray-300 leading-relaxed">장시간 학습 중 논리적 막힘이 생기거나 집중력이 떨어졌을 때</p>
+              </div>
+              <div>
+                <strong class="text-accent block mb-0.5">행동 (Action):</strong>
+                <p class="text-gray-300 leading-relaxed">새벽 시간에 좋아하는 음악을 들으며 정해진 코스로 1시간 동안 페달을 밟으며 생각을 구조화함</p>
+              </div>
+              <div>
+                <strong class="text-accent block mb-0.5">결과 (Result):</strong>
+                <p class="text-gray-300 leading-relaxed">막혔던 문제의 실마리를 정리하여 복귀 후 1시간 이내에 해결책을 찾아 구현을 마침</p>
+              </div>
+              <div>
+                <strong class="text-white block mb-0.5">근거 (Evidence):</strong>
+                <p class="text-gray-400 leading-relaxed">주 2~3회 15km 야간 라이딩 루틴을 통한 리프레시 및 체력 관리 유지</p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
