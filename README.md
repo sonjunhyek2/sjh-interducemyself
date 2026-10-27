@@ -26,11 +26,14 @@ IT 채용 담당자에게, 탄탄한 CS 기본기로 빠르게 성장하며 맡�
 ## 구조
 
 ```
-index.html        진입점 (저장소 최상위)
-css/custom.css    커스텀 스타일
-js/main.js        모달, 모바일 메뉴, 모션
-js/theme.js       다크/라이트 테마
-js/tailwind-config.js
+index.html        메인 진입점 (Hero 소개 및 각 페이지 탐색 허브)
+history.html      이력 및 Core Stack 페이지
+portfolio.html    포트폴리오 프로젝트 카드 및 상세 모달 페이지
+info.html         페이지 대상·목적 및 공개/비공개 정보 명세 페이지
+css/custom.css    공통 커스텀 스타일
+js/main.js        모달, 모바일 메뉴, GSAP 모션
+js/theme.js       다크/라이트 테마 제어
+js/tailwind-config.js Tailwind 설정
 .nojekyll         Jekyll 처리 비활성화
 ```
 

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- FOUC 방지: DOM 렌더링 전 저장된 테마 즉시 적용 -->
+  <script>if (localStorage.getItem('sjh-theme') === 'light') document.documentElement.classList.remove('dark');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>이력 | 손준혁 Portfolio</title>
+  <meta name="description" content="손준혁 개발자의 학력, 자격증, 학습 이력 및 핵심 기술 스택을 소개합니다.">
+
+  <!-- Libraries: Tailwind, FontAwesome, GSAP -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Tailwind Custom Config & Custom CSS -->
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- ============================================================
+       COMPONENT: Global Navigation (COMP-NAV)
+       ============================================================ -->
+  <nav class="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-18 flex justify-between items-center py-5">
+      <!-- Logo -->
+      <a href="index.html" class="text-lg font-bold tracking-tighter text-white">SJH.</a>
+
+      <!-- Right Side: Desktop Menu + Theme Toggle + Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="nav-link text-gray-500 hover:text-white transition-colors">메인</a>
+          <a href="history.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">이력</a>
+          <a href="portfolio.html" class="nav-link text-gray-500 hover:text-white transition-colors">포트폴리오</a>
+          <a href="info.html" class="nav-link text-gray-500 hover:text-white transition-colors">공개 정보</a>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn"
+          class="w-8 h-8 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 transition-all text-gray-400 hover:text-white"
+          aria-label="테마 전환">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white transition-colors"
+          aria-label="메뉴 열기">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
+      <a href="index.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">메인</a>
+      <a href="history.html" class="block text-sm text-white font-semibold py-1">이력</a>
+      <a href="portfolio.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">포트폴리오</a>
+      <a href="info.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">공개 정보</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       CONTENT: HISTORY (이력 및 기술 스택)
+       ============================================================ -->
+  <main class="flex-grow pt-32 pb-24 px-6">
+    <div class="max-w-6xl mx-auto gsap-section">
+      
+      <div class="mb-16">
+        <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">About Me</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">이력 <span class="text-gray-600">History</span></h1>
+        <p class="text-gray-400 text-base max-w-xl font-light leading-relaxed">
+          컴퓨터 과학의 본질을 탐구하고, 배운 지식을 실제 시스템 구현으로 연결해 온 여정입니다.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-16">
+        <!-- 타임라인 -->
+        <div class="md:col-span-7 space-y-8 relative timeline-line pl-8">
+
+          <!-- 항목 1: 현재 진행 중 -->
+          <div class="relative">
+            <div class="absolute -left-8 top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-background z-10"></div>
+            <div class="p-6 rounded-2xl bg-surface border border-white/5 hover:border-white/10 transition-colors">
+              <span class="inline-block text-accent text-xs font-bold tracking-widest uppercase mb-2">현재 진행 중</span>
+              <h2 class="text-lg font-bold mb-2 text-white">정보처리기사 취득 및 CS 심화 학습</h2>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                운영체제(Paging/Segmentation), 네트워크 프로토콜 등 시스템의 근간이 되는 CS 지식을 다지며 견고한 코드 설계의 기반을 마련하고 있습니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- 항목 2: 학력 -->
+          <div class="relative">
+            <div class="absolute -left-8 top-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-background z-10"></div>
+            <div class="p-6 rounded-2xl bg-surface border border-white/5 hover:border-white/10 transition-colors">
+              <span class="text-gray-500 text-xs font-bold tracking-widest uppercase mb-2 block">학력</span>
+              <h2 class="text-lg font-bold mb-2 text-white">전남대학교 전자상거래 전공</h2>
+              <p class="text-gray-400 text-sm leading-relaxed">
+                비즈니스 모델과 상거래 시스템의 흐름을 학습하며, 단순한 기술 구현을 넘어 사용자 가치를 창출하는 개발자의 시각을 길렀습니다.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 기술 스택 카드 -->
+        <div class="md:col-span-5">
+          <div class="sticky top-28 p-8 rounded-3xl bg-surface border border-white/5">
+            <h2 class="text-sm font-bold mb-6 text-gray-300 uppercase tracking-widest">Core Stack</h2>
+            <ul class="space-y-5">
+              <li class="flex items-center justify-between">
+                <span class="text-white font-medium">Java / Spring Boot</span>
+                <span class="text-xs text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">Backend</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-white font-medium">Oracle DB / MySQL</span>
+                <span class="text-xs text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">Database</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-white font-medium">HTML / CSS / JavaScript</span>
+                <span class="text-xs text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">Frontend</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-white font-medium">Thymeleaf / JSP</span>
+                <span class="text-xs text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">View</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-white font-medium">Git / GitHub</span>
+                <span class="text-xs text-gray-400 border border-white/10 px-2.5 py-1 rounded-full">Collaboration</span>
+              </li>
+            </ul>
+
+            <div class="mt-8 pt-6 border-t border-white/5 flex justify-between items-center">
+              <span class="text-xs text-gray-500">다음 단계 살펴보기</span>
+              <a href="portfolio.html" class="text-xs text-accent hover:underline flex items-center gap-1 font-medium">
+                포트폴리오 보러가기 <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="py-10 text-center border-t border-white/5 text-gray-700 text-sm">
+    <p>© 2026 Son Jun-hyeok. Crafted with logic and persistence.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+
+</body>
+
+</html>

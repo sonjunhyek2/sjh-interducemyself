@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- FOUC 방지: DOM 렌더링 전 저장된 테마 즉시 적용 -->
+  <script>if (localStorage.getItem('sjh-theme') === 'light') document.documentElement.classList.remove('dark');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>공개 정보 | 손준혁 Portfolio</title>
+  <meta name="description" content="손준혁 개발자 포트폴리오의 대상과 목적, 공개 및 비공개 정보 정책 안내입니다.">
+
+  <!-- Libraries: Tailwind, FontAwesome, GSAP -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Tailwind Custom Config & Custom CSS -->
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- ============================================================
+       COMPONENT: Global Navigation (COMP-NAV)
+       ============================================================ -->
+  <nav class="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-18 flex justify-between items-center py-5">
+      <!-- Logo -->
+      <a href="index.html" class="text-lg font-bold tracking-tighter text-white">SJH.</a>
+
+      <!-- Right Side: Desktop Menu + Theme Toggle + Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="nav-link text-gray-500 hover:text-white transition-colors">메인</a>
+          <a href="history.html" class="nav-link text-gray-500 hover:text-white transition-colors">이력</a>
+          <a href="portfolio.html" class="nav-link text-gray-500 hover:text-white transition-colors">포트폴리오</a>
+          <a href="info.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">공개 정보</a>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn"
+          class="w-8 h-8 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 transition-all text-gray-400 hover:text-white"
+          aria-label="테마 전환">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white transition-colors"
+          aria-label="메뉴 열기">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
+      <a href="index.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">메인</a>
+      <a href="history.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
+      <a href="portfolio.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">포트폴리오</a>
+      <a href="info.html" class="block text-sm text-white font-semibold py-1">공개 정보</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       CONTENT: INFO (페이지 목적 및 공개/비공개 정보)
+       ============================================================ -->
+  <main class="flex-grow pt-32 pb-24 px-6">
+    <div class="max-w-4xl mx-auto gsap-section">
+      
+      <div class="mb-12">
+        <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">About This Page</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-white">공개 정보 <span class="text-gray-600">Public Info</span></h1>
+        
+        <!-- 페이지의 대상과 목적 (한 문장) -->
+        <div class="p-6 rounded-2xl bg-surface border border-accent/20 mb-8">
+          <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-2">페이지의 대상과 목적</p>
+          <p id="page-purpose" class="text-white text-base md:text-lg leading-relaxed font-medium">
+            이 페이지는 IT 채용 담당자에게, 탄탄한 CS 기본기로 빠르게 성장하며 맡은 일을 끝까지 해내는 개발자임을 보여 주기 위해 만들었습니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- 공개하는 정보 -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg">
+          <h2 class="text-base font-bold mb-5 text-accent uppercase tracking-widest flex items-center gap-2">
+            <i class="fa-solid fa-eye text-accent"></i> 공개하는 정보 (4개)
+          </h2>
+          <ul class="space-y-4 text-sm text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
+              <span><strong>이름과 개발자 소개:</strong> 손준혁 개발자의 가치관 및 성장 지향점</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
+              <span><strong>학력 및 학습 이력:</strong> 전남대학교 전자상거래 전공 및 정보처리기사 준비 이력</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
+              <span><strong>기술 스택과 프로젝트:</strong> Spring Boot 기반 실무/학습 프로젝트 상세 내역</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
+              <span><strong>GitHub 공개 저장소 주소:</strong> 소스 코드를 누구나 열람할 수 있는 GitHub 링크</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 공개하지 않는 정보 -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg">
+          <h2 class="text-base font-bold mb-5 text-gray-400 uppercase tracking-widest flex items-center gap-2">
+            <i class="fa-solid fa-eye-slash text-gray-500"></i> 공개하지 않는 정보 (4개)
+          </h2>
+          <ul class="space-y-4 text-sm text-gray-300">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2 flex-shrink-0"></span>
+              <span><strong>전화번호:</strong> 개인 연락처 보호를 위해 포함하지 않음</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2 flex-shrink-0"></span>
+              <span><strong>집 주소:</strong> 상세 거주지 정보 비공개</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2 flex-shrink-0"></span>
+              <span><strong>주민등록번호 및 생년월일:</strong> 민감 고유식별정보 배제</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2 flex-shrink-0"></span>
+              <span><strong>계정 및 인증 정보:</strong> 이메일 주소, 비밀번호, API 키, 토큰 미포함</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 안내 및 무인증 열람 보장 알림 -->
+      <div class="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/5 text-xs text-gray-400 leading-relaxed space-y-2">
+        <p><i class="fa-solid fa-shield-halved text-accent mr-1"></i> <strong>원칙 준수 안내:</strong> 비공개로 정한 정보는 비밀번호 등으로 가려둔 것이 아니라, <strong>웹 페이지 화면과 공개 소스 코드 어디에도 아예 넣지 않았습니다.</strong></p>
+        <p><i class="fa-solid fa-check text-green-400 mr-1"></i> 본 웹사이트의 모든 페이지와 GitHub 소스 코드는 계정 생성, 로그인, 인증, 비밀번호, OAuth, CAPTCHA 없이 <strong>새 시크릿 창에서 즉시 열람</strong>할 수 있습니다.</p>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="py-10 text-center border-t border-white/5 text-gray-700 text-sm">
+    <p>© 2026 Son Jun-hyeok. Crafted with logic and persistence.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+
+</body>
+
+</html>

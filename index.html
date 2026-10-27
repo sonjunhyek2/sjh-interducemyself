@@ -10,8 +10,8 @@
   <!-- SEO Meta -->
   <title>손준혁 | Portfolio</title>
   <meta name="description"
-    content="탄탄한 CS 기본기를 바탕으로 끊임없이 성장하는 풀스택 개발자 손준혁의 포트폴리오입니다. Spring Boot, Java, Oracle DB 기반 프로젝트 경험을 확인해보세요.">
-  <meta property="og:title" content="손준혁 | Full-Stack Developer Portfolio">
+    content="탄탄한 CS 기본기를 바탕으로 끊임없이 성장하는 개발자 손준혁의 포트폴리오입니다. Spring Boot, Java, Oracle DB 기반 프로젝트를 확인해보세요.">
+  <meta property="og:title" content="손준혁 | Developer Portfolio">
   <meta property="og:description" content="탄탄한 기본기와 성장하는 개발자, 손준혁의 포트폴리오">
   <meta property="og:type" content="website">
 
@@ -21,14 +21,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <!-- Tailwind Custom Config (외부 파일로 분리 - js/tailwind-config.js) -->
+  <!-- Tailwind Custom Config & Custom CSS -->
   <script src="js/tailwind-config.js"></script>
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/custom.css">
 </head>
 
-<body class="antialiased">
+<body class="antialiased min-h-screen flex flex-col justify-between">
 
   <!-- ============================================================
        COMPONENT: Global Navigation (COMP-NAV)
@@ -36,17 +34,17 @@
   <nav class="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
     <div class="max-w-6xl mx-auto px-6 h-18 flex justify-between items-center py-5">
       <!-- Logo -->
-      <a href="#main" class="text-lg font-bold tracking-tighter text-white">SJH.</a>
+      <a href="index.html" class="text-lg font-bold tracking-tighter text-white">SJH.</a>
 
       <!-- Right Side: Desktop Menu + Theme Toggle + Mobile Hamburger -->
       <div class="flex items-center gap-3">
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500 items-center">
-          <a href="#main" class="nav-link hover:text-white transition-colors">메인</a>
-          <a href="#history" class="nav-link hover:text-white transition-colors">이력</a>
-          <a href="#portfolio" class="nav-link hover:text-white transition-colors">포트폴리오</a>
-          <a href="#info" class="nav-link hover:text-white transition-colors">공개 정보</a>
+        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+          <a href="index.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">메인</a>
+          <a href="history.html" class="nav-link text-gray-500 hover:text-white transition-colors">이력</a>
+          <a href="portfolio.html" class="nav-link text-gray-500 hover:text-white transition-colors">포트폴리오</a>
+          <a href="info.html" class="nav-link text-gray-500 hover:text-white transition-colors">공개 정보</a>
         </div>
 
         <!-- Theme Toggle Button (모든 화면 크기에서 표시) -->
@@ -67,247 +65,136 @@
 
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
-      <a href="#main" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">메인</a>
-      <a href="#history" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
-      <a href="#portfolio" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">포트폴리오</a>
-      <a href="#info" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">공개 정보</a>
+      <a href="index.html" class="block text-sm text-white font-semibold py-1">메인</a>
+      <a href="history.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
+      <a href="portfolio.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">포트폴리오</a>
+      <a href="info.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">공개 정보</a>
     </div>
   </nav>
 
 
   <!-- ============================================================
-       SECTION 1: MAIN (Hero)
+       CONTENT: MAIN (Hero & Navigation Cards)
        ============================================================ -->
-  <section id="main" class="relative min-h-screen flex items-center pt-20 px-6 overflow-hidden">
-    <!-- 배경 글로우 효과 -->
-    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-1/3 right-1/4 w-64 h-64 bg-blue-800/10 rounded-full blur-[100px] pointer-events-none">
-    </div>
+  <main class="flex-grow">
 
-    <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-      <!-- 텍스트 콘텐츠 -->
-      <div class="gsap-hero">
+    <!-- Hero Section -->
+    <section class="relative min-h-[75vh] flex items-center pt-28 pb-16 px-6 overflow-hidden">
+      <!-- 배경 글로우 효과 -->
+      <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-64 h-64 bg-blue-800/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.08] mb-6 text-white">
-          손준혁
-          <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600">Son Junhyeok</span>
-        </h1>
-        <p class="text-gray-400 text-base md:text-lg max-w-md font-light leading-relaxed mb-10">
-          <br class="hidden md:block">끊임없이 배우고, 더 나은 구조를 고민합니다.
-        </p>
-        <div class="flex gap-5 items-center flex-wrap">
-          <a href="#portfolio"
-            class="px-7 py-3.5 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition-colors">
-            프로젝트 보기
-          </a>
-          <a href="#info"
-            class="px-7 py-3.5 border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/5 transition-colors">
-            공개 정보 보기
-          </a>
-          <a href="https://github.com/sonjunhyek2" target="_blank" rel="noopener"
-            class="text-gray-500 hover:text-white transition-colors text-2xl ml-1" aria-label="GitHub">
-            <i class="fa-brands fa-github"></i>
-          </a>
+      <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+        <!-- 텍스트 콘텐츠 -->
+        <div class="gsap-hero">
+          <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-4">Software Developer</p>
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.08] mb-6 text-white">
+            손준혁
+            <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600">Son Junhyeok</span>
+          </h1>
+          <p class="text-gray-400 text-base md:text-lg max-w-md font-light leading-relaxed mb-8">
+            탄탄한 기본기를 바탕으로 끊임없이 배우고, 더 나은 구조를 고민하는 개발자입니다.
+          </p>
+          <div class="flex gap-4 items-center flex-wrap">
+            <a href="portfolio.html"
+              class="px-7 py-3.5 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition-colors">
+              프로젝트 보기
+            </a>
+            <a href="info.html"
+              class="px-7 py-3.5 border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/5 transition-colors">
+              공개 정보 보기
+            </a>
+            <a href="https://github.com/sonjunhyek2" target="_blank" rel="noopener"
+              class="text-gray-500 hover:text-white transition-colors text-2xl ml-2" aria-label="GitHub 프로필">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- 그래픽 영역 -->
-      <div class="hidden md:flex justify-end gsap-hero">
-        <div
-          class="w-[78%] aspect-square rounded-full border border-white/5 relative overflow-hidden flex items-center justify-center bg-surface">
-          <i class="fa-solid fa-code text-7xl text-white/[0.04]"></i>
+        <!-- 그래픽 영역 -->
+        <div class="hidden md:flex justify-end gsap-hero">
           <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-accent/15 blur-[80px] rounded-full">
+            class="w-[78%] aspect-square rounded-full border border-white/5 relative overflow-hidden flex items-center justify-center bg-surface">
+            <i class="fa-solid fa-code text-7xl text-white/[0.04]"></i>
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-accent/15 blur-[80px] rounded-full">
+            </div>
+            <!-- 회전하는 링 장식 -->
+            <div class="absolute inset-4 rounded-full border border-white/[0.04] animate-spin ring-slow"></div>
+            <div class="absolute inset-12 rounded-full border border-white/[0.03] animate-spin ring-reverse"></div>
           </div>
-          <!-- 회전하는 링 장식 (애니메이션 속도는 custom.css .ring-slow / .ring-reverse 클래스로 제어) -->
-          <div class="absolute inset-4 rounded-full border border-white/[0.04] animate-spin ring-slow"></div>
-          <div class="absolute inset-12 rounded-full border border-white/[0.03] animate-spin ring-reverse"></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- 사이트 둘러보기 (분할 페이지 바로가기 카드 섹션) -->
+    <section class="py-20 px-6 border-t border-white/5 bg-surface/50">
+      <div class="max-w-6xl mx-auto gsap-section">
+        <div class="mb-12">
+          <p class="text-xs uppercase tracking-widest text-accent font-medium mb-2">Explore</p>
+          <h2 class="text-3xl font-bold tracking-tight text-white">페이지 둘러보기</h2>
+          <p class="text-gray-500 text-sm font-light mt-1">원하시는 영역을 선택하여 상세 내용을 확인하세요.</p>
+        </div>
 
-  <!-- ============================================================
-       SECTION 2: HISTORY (이력 타임라인)
-       ============================================================ -->
-  <section id="history" class="py-28 px-6 bg-surface border-t border-white/5">
-    <div class="max-w-6xl mx-auto gsap-section">
-      <div class="mb-16">
-        <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">About Me</p>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">이력 <span class="text-gray-600">History</span></h2>
-      </div>
+        <div class="grid md:grid-cols-3 gap-6">
 
-      <div class="grid md:grid-cols-12 gap-16">
-        <!-- 타임라인 -->
-        <div class="md:col-span-7 space-y-8 relative timeline-line pl-8">
-
-          <!-- 항목 1: 현재 진행 중 -->
-          <div class="relative">
-            <div class="absolute -left-8 top-1.5 w-4 h-4 rounded-full bg-accent border-4 border-background z-10"></div>
-            <div class="p-6 rounded-2xl bg-surface-2 border border-white/5 hover:border-white/10 transition-colors">
-              <span class="inline-block text-accent text-xs font-bold tracking-widest uppercase mb-2">현재 진행 중</span>
-              <h3 class="text-lg font-bold mb-2 text-white">정보처리기사 취득 및 CS 심화 학습</h3>
-              <p class="text-gray-500 text-sm leading-relaxed">
-                운영체제(Paging/Segmentation), 네트워크 프로토콜 등 시스템의 근간이 되는 CS 지식을 다지며 견고한 코드 설계의 기반을 마련하고 있습니다.
+          <!-- 카드 1: 이력 -->
+          <a href="history.html"
+            class="group p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between hover:-translate-y-1">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-xl text-white mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
+                <i class="fa-solid fa-timeline"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">이력 <span class="text-gray-500 text-sm font-normal">History</span></h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                학력, 정보처리기사 및 CS 학습 이력, Core 기술 스택을 타임라인으로 확인하실 수 있습니다.
               </p>
             </div>
-          </div>
+            <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors font-medium">
+              이력 페이지로 이동 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+            </span>
+          </a>
 
-          <!-- 항목 3: 학력 -->
-          <div class="relative">
-            <div class="absolute -left-8 top-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-surface z-10"></div>
-            <div class="p-6 rounded-2xl bg-surface-2 border border-white/5 hover:border-white/10 transition-colors">
-              <span class="text-gray-600 text-xs font-bold tracking-widest uppercase mb-2 block">학력</span>
-              <h3 class="text-lg font-bold mb-2 text-white">전남대학교 전자상거래 전공</h3>
-              <p class="text-gray-500 text-sm leading-relaxed">
-                비즈니스 모델과 상거래 시스템의 흐름을 학습하며, 단순한 기술 구현을 넘어 사용자 가치를 창출하는 개발자의 시각을 길렀습니다.
+          <!-- 카드 2: 포트폴리오 -->
+          <a href="portfolio.html"
+            class="group p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between hover:-translate-y-1">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-xl text-white mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">포트폴리오 <span class="text-gray-500 text-sm font-normal">Portfolio</span></h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                TutorBridge, Firstboot-1 등 문제 해결과 아키텍처 중심의 주요 프로젝트 쇼케이스입니다.
               </p>
             </div>
-          </div>
-        </div>
+            <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors font-medium">
+              프로젝트 보러가기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+            </span>
+          </a>
 
-        <!-- 기술 스택 카드 -->
-        <div class="md:col-span-5">
-          <div class="sticky top-28 p-8 rounded-3xl bg-background border border-white/5">
-            <h3 class="text-sm font-bold mb-6 text-gray-400 uppercase tracking-widest">Core Stack</h3>
-            <ul class="space-y-5">
-              <li class="flex items-center justify-between">
-                <span class="text-white font-medium">Java / Spring Boot</span>
-                <span class="text-xs text-gray-600 border border-gray-800 px-2.5 py-1 rounded-full">Backend</span>
-              </li>
-              <li class="flex items-center justify-between">
-                <span class="text-white font-medium">Oracle DB / MySQL</span>
-                <span class="text-xs text-gray-600 border border-gray-800 px-2.5 py-1 rounded-full">Database</span>
-              </li>
-              <li class="flex items-center justify-between">
-                <span class="text-white font-medium">HTML / CSS / JS</span>
-                <span class="text-xs text-gray-600 border border-gray-800 px-2.5 py-1 rounded-full">Frontend</span>
-              </li>
-              <li class="flex items-center justify-between">
-                <span class="text-white font-medium">Thymeleaf / JSP</span>
-                <span class="text-xs text-gray-600 border border-gray-800 px-2.5 py-1 rounded-full">View</span>
-              </li>
-              <li class="flex items-center justify-between">
-                <span class="text-white font-medium">Git / GitHub</span>
-                <span class="text-xs text-gray-600 border border-gray-800 px-2.5 py-1 rounded-full">Collaboration</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 3: PORTFOLIO (프로젝트)
-       ============================================================ -->
-  <section id="portfolio" class="py-28 px-6">
-    <div class="max-w-6xl mx-auto gsap-section">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">Projects</p>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">포트폴리오 <span
-              class="text-gray-600">Portfolio</span></h2>
-          <p class="text-gray-500 text-sm font-light">문제 해결 과정과 시스템 설계 중심의 결과물입니다.</p>
-        </div>
-      </div>
-
-      <!-- 프로젝트 그리드 (정적 카드: data-* 속성이 상세 모달에 주입됨) -->
-      <div id="portfolio-grid" class="grid md:grid-cols-2 gap-6">
-
-        <article tabindex="0" role="button" aria-label="TutorBridge 상세 보기"
-          class="project-card group relative rounded-3xl bg-surface border border-white/5 hover:border-white/20 p-8 cursor-pointer"
-          data-title="TutorBridge"
-          data-period="팀 프로젝트"
-          data-description="과외 교사와 학생을 연결하는 매칭 웹 서비스입니다."
-          data-role="백엔드 설계와 데이터베이스 모델링에 참여했습니다."
-          data-stack="Java, Spring Boot, Oracle DB, Thymeleaf"
-          data-trouble="요구사항 변경에 맞춰 테이블 구조와 화면 흐름을 조정하며 협업 과정에서의 문제 해결 경험을 쌓았습니다."
-          data-github="https://github.com">
-          <div class="mb-8 flex justify-between items-start">
-            <div class="w-11 h-11 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg">
-              <i class="fa-solid fa-graduation-cap"></i>
+          <!-- 카드 3: 공개 정보 -->
+          <a href="info.html"
+            class="group p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between hover:-translate-y-1">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-xl text-white mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">공개 정보 <span class="text-gray-500 text-sm font-normal">Public Info</span></h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                채용 담당자를 위해 정의한 페이지의 대상과 목적, 공개 및 비공개 정보 목록을 확인합니다.
+              </p>
             </div>
-            <span class="text-xs font-mono text-gray-600 border border-gray-800 px-3 py-1 rounded-full">Team Project</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-3 text-white">TutorBridge</h3>
-          <p class="text-gray-500 font-light leading-relaxed mb-6 text-sm">
-            과외 교사와 학생을 연결하는 매칭 웹 서비스입니다.
-          </p>
-          <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors">
-            상세 보기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-          </span>
-        </article>
+            <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors font-medium">
+              공개 정책 확인 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+            </span>
+          </a>
 
-        <article tabindex="0" role="button" aria-label="Firstboot-1 상세 보기"
-          class="project-card group relative rounded-3xl bg-surface border border-white/5 hover:border-white/20 p-8 cursor-pointer"
-          data-title="Firstboot-1"
-          data-period="학습 프로젝트"
-          data-description="Spring Boot 기본기를 다지기 위해 만든 첫 번째 웹 애플리케이션입니다."
-          data-role="기획부터 구현까지 혼자 진행했습니다."
-          data-stack="Java, Spring Boot, MySQL, Thymeleaf"
-          data-trouble="MVC 구조와 데이터 흐름을 직접 구현하며 오류 원인을 추적하는 방법을 익혔습니다."
-          data-github="https://github.com">
-          <div class="mb-8 flex justify-between items-start">
-            <div class="w-11 h-11 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
-              <i class="fa-solid fa-seedling"></i>
-            </div>
-            <span class="text-xs font-mono text-gray-600 border border-gray-800 px-3 py-1 rounded-full">Personal</span>
-          </div>
-          <h3 class="text-2xl font-bold mb-3 text-white">Firstboot-1</h3>
-          <p class="text-gray-500 font-light leading-relaxed mb-6 text-sm">
-            Spring Boot 기본기를 다지기 위해 만든 첫 번째 웹 애플리케이션입니다.
-          </p>
-          <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors">
-            상세 보기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-          </span>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       SECTION 4: INFO (페이지 목적 및 공개/비공개 정보)
-       ============================================================ -->
-  <section id="info" class="py-28 px-6 bg-surface border-t border-white/5">
-    <div class="max-w-4xl mx-auto gsap-section">
-      <div class="mb-12">
-        <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">About This Page</p>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">공개 정보 <span class="text-gray-600">Public Info</span></h2>
-        <!-- 페이지의 대상과 목적 (한 문장). 필요 시 본인 문장으로 교체 -->
-        <p id="page-purpose" class="text-gray-300 text-base leading-relaxed">
-          이 페이지는 IT 채용 담당자에게, 탄탄한 CS 기본기로 빠르게 성장하며 맡은 일을 끝까지 해내는 개발자임을 보여 주기 위해 만들었습니다.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="p-8 rounded-2xl bg-background border border-white/5">
-          <h3 class="text-sm font-bold mb-5 text-accent uppercase tracking-widest"><i class="fa-solid fa-eye mr-2"></i>공개하는 정보</h3>
-          <ul class="space-y-3 text-sm text-gray-300 list-disc pl-5">
-            <li>이름과 개발자로서의 소개</li>
-            <li>학력(전공)과 학습 중인 자격증</li>
-            <li>기술 스택과 프로젝트 요약</li>
-            <li>GitHub 공개 저장소 주소</li>
-          </ul>
-        </div>
-        <div class="p-8 rounded-2xl bg-background border border-white/5">
-          <h3 class="text-sm font-bold mb-5 text-gray-400 uppercase tracking-widest"><i class="fa-solid fa-eye-slash mr-2"></i>공개하지 않는 정보</h3>
-          <ul class="space-y-3 text-sm text-gray-300 list-disc pl-5">
-            <li>전화번호</li>
-            <li>집 주소</li>
-            <li>주민등록번호와 생년월일</li>
-            <li>이메일 주소, 비밀번호, API 키 등 계정·인증 정보</li>
-          </ul>
         </div>
       </div>
-      <p class="mt-6 text-xs text-gray-600">비공개 정보는 숨긴 것이 아니라 페이지와 소스 코드에 아예 포함하지 않았습니다. 이 페이지는 로그인 없이 열람할 수 있습니다.</p>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
 
   <!-- ============================================================
@@ -317,61 +204,7 @@
     <p>© 2026 Son Jun-hyeok. Crafted with logic and persistence.</p>
   </footer>
 
-
-  <!-- ============================================================
-       MODAL: 프로젝트 상세 (MODAL-DETAIL)
-       ============================================================ -->
-  <div id="modal-overlay" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70"
-    role="dialog" aria-modal="true" aria-labelledby="modal-title">
-
-    <div
-      class="relative w-full max-w-xl bg-surface border border-white/10 rounded-3xl p-8 md:p-10 max-h-[90vh] overflow-y-auto">
-      <!-- 닫기 버튼 -->
-      <button id="modal-close"
-        class="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all"
-        aria-label="모달 닫기">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <!-- 모달 콘텐츠 (JS에서 동적으로 채워짐) -->
-      <div class="mb-1">
-        <span id="modal-period" class="text-xs text-gray-600 font-medium uppercase tracking-widest"></span>
-      </div>
-      <h3 id="modal-title" class="text-2xl font-bold text-white mb-6"></h3>
-
-      <div class="space-y-5 text-sm">
-        <div>
-          <p class="text-xs uppercase tracking-widest text-gray-600 mb-2">프로젝트 설명</p>
-          <p id="modal-description" class="text-gray-300 leading-relaxed"></p>
-        </div>
-        <div>
-          <p class="text-xs uppercase tracking-widest text-gray-600 mb-2">핵심 기여도</p>
-          <p id="modal-role" class="text-gray-300 leading-relaxed"></p>
-        </div>
-        <div>
-          <p class="text-xs uppercase tracking-widest text-gray-600 mb-2">기술 스택</p>
-          <div id="modal-stack" class="flex flex-wrap gap-2"></div>
-        </div>
-        <div>
-          <p class="text-xs uppercase tracking-widest text-gray-600 mb-2">트러블슈팅 / 문제 해결</p>
-          <p id="modal-trouble" class="text-gray-300 leading-relaxed"></p>
-        </div>
-      </div>
-
-      <!-- 외부 링크 -->
-      <div class="mt-8 flex gap-3">
-        <a id="modal-github" href="#" target="_blank" rel="noopener"
-          class="flex-1 flex items-center justify-center gap-2 py-3 border border-white/10 hover:bg-white/5 rounded-full text-sm text-white transition-colors">
-          <i class="fa-brands fa-github"></i> GitHub
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ============================================================
-       Scripts (ES Module)
-       ============================================================ -->
+  <!-- Scripts -->
   <script type="module" src="js/main.js"></script>
   <script src="js/theme.js"></script>
 
