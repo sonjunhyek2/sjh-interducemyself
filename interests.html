@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- FOUC 방지: DOM 렌더링 전 저장된 테마 즉시 적용 -->
+  <script>if (localStorage.getItem('sjh-theme') === 'light') document.documentElement.classList.remove('dark');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>관심 분야 | 손준혁</title>
+  <meta name="description" content="손준혁이 지속적으로 탐구하고 깊은 흥미를 느끼는 관심 기술 및 지식 분야입니다.">
+
+  <!-- Libraries: Tailwind, FontAwesome, GSAP -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Tailwind Custom Config & Custom CSS -->
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- ============================================================
+       COMPONENT: Global Navigation (COMP-NAV)
+       ============================================================ -->
+  <nav class="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-18 flex justify-between items-center py-5">
+      <!-- Logo -->
+      <a href="index.html" class="text-lg font-bold tracking-tighter text-white">SJH.</a>
+
+      <!-- Right Side: Desktop Menu + Theme Toggle + Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+          <a href="index.html" class="nav-link text-gray-400 hover:text-white transition-colors">메인</a>
+          <a href="interests.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">관심 분야</a>
+          <a href="works.html" class="nav-link text-gray-400 hover:text-white transition-colors">만든 작품</a>
+          <a href="hobbies.html" class="nav-link text-gray-400 hover:text-white transition-colors">취미</a>
+          <a href="history.html" class="nav-link text-gray-400 hover:text-white transition-colors">이력</a>
+          <a href="info.html" class="nav-link text-gray-400 hover:text-white transition-colors">공개 정보</a>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn"
+          class="w-8 h-8 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 transition-all text-gray-400 hover:text-white"
+          aria-label="테마 전환">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white transition-colors"
+          aria-label="메뉴 열기">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
+      <a href="index.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">메인</a>
+      <a href="interests.html" class="block text-sm text-white font-semibold py-1">관심 분야</a>
+      <a href="works.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">만든 작품</a>
+      <a href="hobbies.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">취미</a>
+      <a href="history.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
+      <a href="info.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">공개 정보</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       CONTENT: INTERESTS (관심 분야)
+       ============================================================ -->
+  <main class="flex-grow pt-32 pb-24 px-6">
+    <div class="max-w-6xl mx-auto gsap-section">
+
+      <div class="mb-16">
+        <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">Focus & Curiosity</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">관심 분야 <span class="text-gray-600">Interests</span></h1>
+        <p class="text-gray-400 text-base max-w-xl font-light leading-relaxed">
+          호기심을 갖고 깊이 파고드는 주제들입니다. 어떻게 시스템이 더 견고해지고, 사용자에게 더 좋은 경험을 줄 수 있는지 고민합니다.
+        </p>
+      </div>
+
+      <!-- 관심 분야 카드 그리드 -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 관심 1: 백엔드 & 시스템 구조 -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h2 class="text-xl font-bold text-white mb-3">시스템 아키텍처 & 백엔드</h2>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            대규모 트래픽에서도 데이터 무결성과 빠른 응답성을 보장하는 데이터베이스 모델링과 계층형 설계에 깊은 관심을 두고 있습니다.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-gray-500">
+            <span class="px-2.5 py-1 rounded bg-white/5">DB 모델링</span>
+            <span class="px-2.5 py-1 rounded bg-white/5">트랜잭션 관리</span>
+            <span class="px-2.5 py-1 rounded bg-white/5">API 설계</span>
+          </div>
+        </div>
+
+        <!-- 관심 2: 컴퓨터 사이언스 기초 -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h2 class="text-xl font-bold text-white mb-3">CS 기본기 & 알고리즘</h2>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            운영체제의 메모리 관리, 네트워크의 패킷 전송 구조 등 컴퓨터의 근간 원리를 이해하고, 시간 복잡도를 줄이는 효율적인 알고리즘 풀이를 좋아합니다.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-gray-500">
+            <span class="px-2.5 py-1 rounded bg-white/5">운영체제</span>
+            <span class="px-2.5 py-1 rounded bg-white/5">네트워크</span>
+            <span class="px-2.5 py-1 rounded bg-white/5">자료구조</span>
+          </div>
+        </div>
+
+        <!-- 관심 3: 인터랙티브 웹 UI/UX -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h2 class="text-xl font-bold text-white mb-3">인터랙티브 웹 & 디자인</h2>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            웹 표준과 웹 접근성을 준수하면서도, 부드러운 애니메이션과 직관적인 반응성을 주는 모던 웹 인터페이스를 탐구합니다.
+          </p>
+          <div class="flex flex-wrap gap-2 text-xs text-gray-500">
+            <span class="px-2.5 py-1 rounded bg-white/5">웹 표준</span>
+            <span class="px-2.5 py-1 rounded bg-white/5">UI 모션</span>
+            <span class="px-2.5 py-1 rounded bg-white/5">다크모드</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 하단 안내 배너 -->
+      <div class="mt-12 p-8 rounded-3xl border border-white/5 bg-surface flex flex-col md:flex-row gap-6 items-center justify-between">
+        <div>
+          <h2 class="text-lg font-bold text-white mb-1">이러한 관심을 바탕으로 무엇을 만들었을까요?</h2>
+          <p class="text-gray-400 text-sm">관심 분야의 기술들을 직접 손으로 구현해 본 실제 작품들을 확인해 보세요.</p>
+        </div>
+        <a href="works.html"
+          class="px-6 py-3 bg-white text-black font-semibold rounded-full text-sm hover:bg-gray-200 transition-colors whitespace-nowrap flex items-center gap-2">
+          만든 작품 보러가기 <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="py-10 text-center border-t border-white/5 text-gray-700 text-sm">
+    <p>© 2026 Son Jun-hyeok. Crafted with logic and persistence.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+
+</body>
+
+</html>

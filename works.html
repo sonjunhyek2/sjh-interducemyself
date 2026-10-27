@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- FOUC 방지: DOM 렌더링 전 저장된 테마 즉시 적용 -->
+  <script>if (localStorage.getItem('sjh-theme') === 'light') document.documentElement.classList.remove('dark');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>만든 작품 | 손준혁</title>
+  <meta name="description" content="손준혁이 기획하고 직접 구현한 웹 애플리케이션 및 프로젝트 작품들을 소개합니다.">
+
+  <!-- Libraries: Tailwind, FontAwesome, GSAP -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Tailwind Custom Config & Custom CSS -->
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- ============================================================
+       COMPONENT: Global Navigation (COMP-NAV)
+       ============================================================ -->
+  <nav class="fixed w-full top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-18 flex justify-between items-center py-5">
+      <!-- Logo -->
+      <a href="index.html" class="text-lg font-bold tracking-tighter text-white">SJH.</a>
+
+      <!-- Right Side: Desktop Menu + Theme Toggle + Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+          <a href="index.html" class="nav-link text-gray-400 hover:text-white transition-colors">메인</a>
+          <a href="interests.html" class="nav-link text-gray-400 hover:text-white transition-colors">관심 분야</a>
+          <a href="works.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">만든 작품</a>
+          <a href="hobbies.html" class="nav-link text-gray-400 hover:text-white transition-colors">취미</a>
+          <a href="history.html" class="nav-link text-gray-400 hover:text-white transition-colors">이력</a>
+          <a href="info.html" class="nav-link text-gray-400 hover:text-white transition-colors">공개 정보</a>
+        </div>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn"
+          class="w-8 h-8 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 transition-all text-gray-400 hover:text-white"
+          aria-label="테마 전환">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-gray-400 hover:text-white transition-colors"
+          aria-label="메뉴 열기">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
+      <a href="index.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">메인</a>
+      <a href="interests.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">관심 분야</a>
+      <a href="works.html" class="block text-sm text-white font-semibold py-1">만든 작품</a>
+      <a href="hobbies.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">취미</a>
+      <a href="history.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
+      <a href="info.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">공개 정보</a>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       CONTENT: WORKS (만든 작품)
+       ============================================================ -->
+  <main class="flex-grow pt-32 pb-24 px-6">
+    <div class="max-w-6xl mx-auto gsap-section">
+
+      <div class="mb-16">
+        <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">Created Projects</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">만든 작품 <span class="text-gray-600">Works</span></h1>
+        <p class="text-gray-400 text-base max-w-xl font-light leading-relaxed">
+          아이디어를 코드로 구체화하고 직접 완성해 본 결과물들입니다. 각 카드를 클릭하면 상세 제작 과정과 고민한 점을 확인할 수 있습니다.
+        </p>
+      </div>
+
+      <!-- 작품 그리드 (카드를 클릭하면 상세 모달 표출) -->
+      <div id="portfolio-grid" class="grid md:grid-cols-2 gap-6">
+
+        <!-- 작품 1: TutorBridge -->
+        <article tabindex="0" role="button" aria-label="TutorBridge 상세 보기"
+          class="project-card group relative rounded-3xl bg-surface border border-white/5 hover:border-white/20 p-8 cursor-pointer transition-all"
+          data-title="TutorBridge"
+          data-period="팀 프로젝트"
+          data-description="과외 교사와 학생을 서로의 조건에 맞춰 효율적으로 연결해 주는 매칭 웹 서비스입니다."
+          data-role="백엔드 아키텍처 설계와 데이터베이스 모델링 및 회원 권한 체계 구현을 주도했습니다."
+          data-stack="Java, Spring Boot, Oracle DB, Thymeleaf, Git"
+          data-trouble="요구사항 변경에 맞춰 테이블 간 외래키 제약조건과 데이터 무결성을 보장하도록 스키마를 리팩토링하고, 화면 흐름의 병목을 해결했습니다."
+          data-github="https://github.com/sonjunhyek2/sjh-interducemyself">
+          <div class="mb-8 flex justify-between items-start">
+            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <span class="text-xs font-mono text-gray-500 border border-white/10 px-3 py-1 rounded-full">Team Work</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-3 text-white">TutorBridge</h2>
+          <p class="text-gray-400 font-light leading-relaxed mb-6 text-sm">
+            과외 교사와 학생을 연결하는 매칭 웹 서비스입니다.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-2.5 py-0.5 text-xs bg-white/5 rounded text-gray-400">Spring Boot</span>
+            <span class="px-2.5 py-0.5 text-xs bg-white/5 rounded text-gray-400">Oracle DB</span>
+            <span class="px-2.5 py-0.5 text-xs bg-white/5 rounded text-gray-400">Thymeleaf</span>
+          </div>
+          <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors">
+            상세 보기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+          </span>
+        </article>
+
+        <!-- 작품 2: Firstboot-1 -->
+        <article tabindex="0" role="button" aria-label="Firstboot-1 상세 보기"
+          class="project-card group relative rounded-3xl bg-surface border border-white/5 hover:border-white/20 p-8 cursor-pointer transition-all"
+          data-title="Firstboot-1"
+          data-period="개인 프로젝트"
+          data-description="Spring Boot의 기본 MVC 원리와 데이터베이스 영속성 관리를 손수 체득하기 위해 구현한 웹 애플리케이션입니다."
+          data-role="기획부터 엔티티 설계, 비즈니스 로직 작성 및 화면 연동까지 전 과정을 단독 수행했습니다."
+          data-stack="Java, Spring Boot, MySQL, Thymeleaf"
+          data-trouble="계층형 아키텍처(Controller - Service - Repository) 간의 데이터 흐름을 직접 구현하며 트랜잭션 오류와 예외 처리를 디버깅했습니다."
+          data-github="https://github.com/sonjunhyek2/sjh-interducemyself">
+          <div class="mb-8 flex justify-between items-start">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <span class="text-xs font-mono text-gray-500 border border-white/10 px-3 py-1 rounded-full">Personal Work</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-3 text-white">Firstboot-1</h2>
+          <p class="text-gray-400 font-light leading-relaxed mb-6 text-sm">
+            Spring Boot 기본기를 다지기 위해 만든 첫 번째 웹 애플리케이션입니다.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-2.5 py-0.5 text-xs bg-white/5 rounded text-gray-400">Java</span>
+            <span class="px-2.5 py-0.5 text-xs bg-white/5 rounded text-gray-400">Spring Boot</span>
+            <span class="px-2.5 py-0.5 text-xs bg-white/5 rounded text-gray-400">MySQL</span>
+          </div>
+          <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors">
+            상세 보기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+          </span>
+        </article>
+
+      </div>
+
+      <!-- 하단 안내 배너 -->
+      <div class="mt-12 p-8 rounded-3xl border border-white/5 bg-surface flex flex-col md:flex-row gap-6 items-center justify-between">
+        <div>
+          <h2 class="text-lg font-bold text-white mb-1">작품 소스 코드 열람</h2>
+          <p class="text-gray-400 text-sm">모든 소스 코드는 누구나 로그인 없이 GitHub 저장소에서 바로 보실 수 있습니다.</p>
+        </div>
+        <a href="https://github.com/sonjunhyek2/sjh-interducemyself" target="_blank" rel="noopener"
+          class="px-6 py-3 border border-white/10 hover:bg-white/5 rounded-full text-sm text-white transition-colors whitespace-nowrap flex items-center gap-2">
+          <i class="fa-brands fa-github"></i> GitHub 저장소 방문
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- ============================================================
+       MODAL: 작품 상세 (MODAL-DETAIL)
+       ============================================================ -->
+  <div id="modal-overlay" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70"
+    role="dialog" aria-modal="true" aria-labelledby="modal-title">
+
+    <div
+      class="relative w-full max-w-xl bg-surface border border-white/10 rounded-3xl p-8 md:p-10 max-h-[90vh] overflow-y-auto">
+      <!-- 닫기 버튼 -->
+      <button id="modal-close"
+        class="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all"
+        aria-label="모달 닫기">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- 모달 콘텐츠 (JS에서 동적으로 채워짐) -->
+      <div class="mb-1">
+        <span id="modal-period" class="text-xs text-gray-500 font-medium uppercase tracking-widest"></span>
+      </div>
+      <h3 id="modal-title" class="text-2xl font-bold text-white mb-6"></h3>
+
+      <div class="space-y-5 text-sm">
+        <div>
+          <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">작품 설명</p>
+          <p id="modal-description" class="text-gray-300 leading-relaxed"></p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">담당 역할 및 핵심 기여</p>
+          <p id="modal-role" class="text-gray-300 leading-relaxed"></p>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">활용한 기술</p>
+          <div id="modal-stack" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div>
+          <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">고민한 점 및 문제 해결</p>
+          <p id="modal-trouble" class="text-gray-300 leading-relaxed"></p>
+        </div>
+      </div>
+
+      <!-- 외부 링크 -->
+      <div class="mt-8 flex gap-3">
+        <a id="modal-github" href="https://github.com/sonjunhyek2/sjh-interducemyself" target="_blank" rel="noopener"
+          class="flex-1 flex items-center justify-center gap-2 py-3 border border-white/10 hover:bg-white/5 rounded-full text-sm text-white transition-colors">
+          <i class="fa-brands fa-github"></i> GitHub 소스코드
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="py-10 text-center border-t border-white/5 text-gray-700 text-sm">
+    <p>© 2026 Son Jun-hyeok. Crafted with logic and persistence.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+
+</body>
+
+</html>

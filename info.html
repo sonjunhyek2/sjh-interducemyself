@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta -->
-  <title>공개 정보 | 손준혁 Portfolio</title>
-  <meta name="description" content="손준혁 개발자 포트폴리오의 대상과 목적, 공개 및 비공개 정보 정책 안내입니다.">
+  <title>공개 정보 | 손준혁</title>
+  <meta name="description" content="손준혁 웹사이트의 대상과 목적, 공개할 정보와 공개하지 않을 정보 정책 안내입니다.">
 
   <!-- Libraries: Tailwind, FontAwesome, GSAP -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -36,10 +36,12 @@
       <div class="flex items-center gap-3">
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
-          <a href="index.html" class="nav-link text-gray-500 hover:text-white transition-colors">메인</a>
-          <a href="history.html" class="nav-link text-gray-500 hover:text-white transition-colors">이력</a>
-          <a href="portfolio.html" class="nav-link text-gray-500 hover:text-white transition-colors">포트폴리오</a>
+        <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+          <a href="index.html" class="nav-link text-gray-400 hover:text-white transition-colors">메인</a>
+          <a href="interests.html" class="nav-link text-gray-400 hover:text-white transition-colors">관심 분야</a>
+          <a href="works.html" class="nav-link text-gray-400 hover:text-white transition-colors">만든 작품</a>
+          <a href="hobbies.html" class="nav-link text-gray-400 hover:text-white transition-colors">취미</a>
+          <a href="history.html" class="nav-link text-gray-400 hover:text-white transition-colors">이력</a>
           <a href="info.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">공개 정보</a>
         </div>
 
@@ -62,8 +64,10 @@
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
       <a href="index.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">메인</a>
+      <a href="interests.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">관심 분야</a>
+      <a href="works.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">만든 작품</a>
+      <a href="hobbies.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">취미</a>
       <a href="history.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
-      <a href="portfolio.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">포트폴리오</a>
       <a href="info.html" class="block text-sm text-white font-semibold py-1">공개 정보</a>
     </div>
   </nav>
@@ -74,76 +78,97 @@
        ============================================================ -->
   <main class="flex-grow pt-32 pb-24 px-6">
     <div class="max-w-4xl mx-auto gsap-section">
-      
+
       <div class="mb-12">
         <p class="text-xs uppercase tracking-widest text-accent font-medium mb-3">About This Page</p>
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-white">공개 정보 <span class="text-gray-600">Public Info</span></h1>
-        
-        <!-- 페이지의 대상과 목적 (한 문장) -->
-        <div class="p-6 rounded-2xl bg-surface border border-accent/20 mb-8">
+
+        <!-- 페이지의 대상과 목적 (한 문장 명세 - T01-C03 통과 기준) -->
+        <div class="p-6 md:p-8 rounded-3xl bg-surface border border-accent/20 mb-8 shadow-lg">
           <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-2">페이지의 대상과 목적</p>
           <p id="page-purpose" class="text-white text-base md:text-lg leading-relaxed font-medium">
-            이 페이지는 IT 채용 담당자에게, 탄탄한 CS 기본기로 빠르게 성장하며 맡은 일을 끝까지 해내는 개발자임을 보여 주기 위해 만들었습니다.
+            방문자에게 내가 어떤 관심 분야와 취미를 가졌고 어떤 작품을 만드는 사람인지 진솔하게 보여 주기 위해 만든 페이지입니다.
           </p>
         </div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
-        <!-- 공개하는 정보 -->
-        <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg">
-          <h2 class="text-base font-bold mb-5 text-accent uppercase tracking-widest flex items-center gap-2">
-            <i class="fa-solid fa-eye text-accent"></i> 공개하는 정보 (4개)
-          </h2>
-          <ul class="space-y-4 text-sm text-gray-300">
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
-              <span><strong>이름과 개발자 소개:</strong> 손준혁 개발자의 가치관 및 성장 지향점</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
-              <span><strong>학력 및 학습 이력:</strong> 전남대학교 전자상거래 전공 및 정보처리기사 준비 이력</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
-              <span><strong>기술 스택과 프로젝트:</strong> Spring Boot 기반 실무/학습 프로젝트 상세 내역</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
-              <span><strong>GitHub 공개 저장소 주소:</strong> 소스 코드를 누구나 열람할 수 있는 GitHub 링크</span>
-            </li>
-          </ul>
+
+        <!-- 공개하는 정보 (3개 이상 - T01-C04 통과 기준) -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg flex flex-col justify-between">
+          <div>
+            <h2 class="text-base font-bold mb-5 text-accent uppercase tracking-widest flex items-center gap-2">
+              <i class="fa-solid fa-eye text-accent"></i> 공개할 정보 (3개)
+            </h2>
+            <ul class="space-y-4 text-sm text-gray-300">
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">관심 분야:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">시스템 아키텍처, CS 기본기 및 알고리즘, 인터랙티브 웹 디자인</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">만든 작품:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">과외 매칭 플랫폼 TutorBridge, 첫 웹앱 Firstboot-1 등 실제 구현 결과물</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">취미:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">알고리즘 문제 풀기, 기술 블로그 탐독, 산책과 음악 감상</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <p class="mt-6 pt-4 border-t border-white/5 text-xs text-gray-500">
+            * 각 정보는 상단 메뉴의 해당 페이지에서 누구나 자유롭게 열람할 수 있습니다.
+          </p>
         </div>
 
-        <!-- 공개하지 않는 정보 -->
-        <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg">
-          <h2 class="text-base font-bold mb-5 text-gray-400 uppercase tracking-widest flex items-center gap-2">
-            <i class="fa-solid fa-eye-slash text-gray-500"></i> 공개하지 않는 정보 (4개)
-          </h2>
-          <ul class="space-y-4 text-sm text-gray-300">
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2 flex-shrink-0"></span>
-              <span><strong>전화번호:</strong> 개인 연락처 보호를 위해 포함하지 않음</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2 flex-shrink-0"></span>
-              <span><strong>집 주소:</strong> 상세 거주지 정보 비공개</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2 flex-shrink-0"></span>
-              <span><strong>주민등록번호 및 생년월일:</strong> 민감 고유식별정보 배제</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mt-2 flex-shrink-0"></span>
-              <span><strong>계정 및 인증 정보:</strong> 이메일 주소, 비밀번호, API 키, 토큰 미포함</span>
-            </li>
-          </ul>
+        <!-- 공개하지 않을 정보 (3개 이상 - T01-C05 통과 기준) -->
+        <div class="p-8 rounded-3xl bg-surface border border-white/5 shadow-lg flex flex-col justify-between">
+          <div>
+            <h2 class="text-base font-bold mb-5 text-gray-400 uppercase tracking-widest flex items-center gap-2">
+              <i class="fa-solid fa-eye-slash text-gray-500"></i> 공개하지 않을 정보 (3개)
+            </h2>
+            <ul class="space-y-4 text-sm text-gray-300">
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-gray-600 mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">전화번호:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">개인 연락처 보호를 위해 페이지와 소스 코드에 일체 기재하지 않음</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-gray-600 mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">집 주소:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">사생활 및 상세 거주지 정보 비공개</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 rounded-full bg-gray-600 mt-1.5 flex-shrink-0"></span>
+                <div>
+                  <strong class="text-white">학교 이름:</strong>
+                  <p class="text-gray-400 text-xs mt-0.5">특정 출신 학교 이름은 비공개 원칙에 따라 생략(전공만 표기)</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <p class="mt-6 pt-4 border-t border-white/5 text-xs text-gray-500">
+            * 비밀번호 등으로 가린 것이 아니라, 페이지 및 소스 코드에 아예 포함하지 않았습니다.
+          </p>
         </div>
+
       </div>
 
-      <!-- 안내 및 무인증 열람 보장 알림 -->
+      <!-- 무인증 및 시크릿 창 즉시 열람 보장 알림 (T01-C01) -->
       <div class="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/5 text-xs text-gray-400 leading-relaxed space-y-2">
-        <p><i class="fa-solid fa-shield-halved text-accent mr-1"></i> <strong>원칙 준수 안내:</strong> 비공개로 정한 정보는 비밀번호 등으로 가려둔 것이 아니라, <strong>웹 페이지 화면과 공개 소스 코드 어디에도 아예 넣지 않았습니다.</strong></p>
-        <p><i class="fa-solid fa-check text-green-400 mr-1"></i> 본 웹사이트의 모든 페이지와 GitHub 소스 코드는 계정 생성, 로그인, 인증, 비밀번호, OAuth, CAPTCHA 없이 <strong>새 시크릿 창에서 즉시 열람</strong>할 수 있습니다.</p>
+        <p><i class="fa-solid fa-shield-halved text-accent mr-1"></i> <strong>무인증 원칙:</strong> 본 사이트의 모든 페이지와 GitHub 소스 코드는 계정 생성, 로그인, 인증, 초대, 비밀번호, OAuth, CAPTCHA 없이 <strong>새 시크릿 창에서 즉시 열람</strong>할 수 있습니다.</p>
       </div>
 
     </div>

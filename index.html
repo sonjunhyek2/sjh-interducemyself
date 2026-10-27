@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta -->
-  <title>손준혁 | Portfolio</title>
+  <title>손준혁 | 관심 분야 · 만든 작품 · 취미</title>
   <meta name="description"
-    content="탄탄한 CS 기본기를 바탕으로 끊임없이 성장하는 개발자 손준혁의 포트폴리오입니다. Spring Boot, Java, Oracle DB 기반 프로젝트를 확인해보세요.">
-  <meta property="og:title" content="손준혁 | Developer Portfolio">
-  <meta property="og:description" content="탄탄한 기본기와 성장하는 개발자, 손준혁의 포트폴리오">
+    content="손준혁의 관심 분야, 직접 구현한 만든 작품, 그리고 일상의 영감이 되는 취미를 소개하는 공간입니다.">
+  <meta property="og:title" content="손준혁 | 관심 분야 · 만든 작품 · 취미">
+  <meta property="og:description" content="손준혁의 관심 분야, 만든 작품, 취미를 소개합니다.">
   <meta property="og:type" content="website">
 
   <!-- Libraries: Tailwind, FontAwesome, GSAP -->
@@ -40,11 +40,13 @@
       <div class="flex items-center gap-3">
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+        <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
           <a href="index.html" class="nav-link text-white font-semibold border-b-2 border-accent pb-0.5">메인</a>
-          <a href="history.html" class="nav-link text-gray-500 hover:text-white transition-colors">이력</a>
-          <a href="portfolio.html" class="nav-link text-gray-500 hover:text-white transition-colors">포트폴리오</a>
-          <a href="info.html" class="nav-link text-gray-500 hover:text-white transition-colors">공개 정보</a>
+          <a href="interests.html" class="nav-link text-gray-400 hover:text-white transition-colors">관심 분야</a>
+          <a href="works.html" class="nav-link text-gray-400 hover:text-white transition-colors">만든 작품</a>
+          <a href="hobbies.html" class="nav-link text-gray-400 hover:text-white transition-colors">취미</a>
+          <a href="history.html" class="nav-link text-gray-400 hover:text-white transition-colors">이력</a>
+          <a href="info.html" class="nav-link text-gray-400 hover:text-white transition-colors">공개 정보</a>
         </div>
 
         <!-- Theme Toggle Button (모든 화면 크기에서 표시) -->
@@ -66,15 +68,17 @@
     <!-- Mobile Menu Dropdown -->
     <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-white/5 px-6 py-4 space-y-3">
       <a href="index.html" class="block text-sm text-white font-semibold py-1">메인</a>
+      <a href="interests.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">관심 분야</a>
+      <a href="works.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">만든 작품</a>
+      <a href="hobbies.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">취미</a>
       <a href="history.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">이력</a>
-      <a href="portfolio.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">포트폴리오</a>
       <a href="info.html" class="block text-sm text-gray-400 hover:text-white transition-colors py-1">공개 정보</a>
     </div>
   </nav>
 
 
   <!-- ============================================================
-       CONTENT: MAIN (Hero & Navigation Cards)
+       CONTENT: MAIN (Hero & 3대 핵심 테마 카드)
        ============================================================ -->
   <main class="flex-grow">
 
@@ -87,23 +91,23 @@
       <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
         <!-- 텍스트 콘텐츠 -->
         <div class="gsap-hero">
-          <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-4">Software Developer</p>
+          <p class="text-xs uppercase tracking-widest text-accent font-semibold mb-4">Interests · Works · Hobbies</p>
           <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.08] mb-6 text-white">
             손준혁
             <br>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-600">Son Junhyeok</span>
           </h1>
           <p class="text-gray-400 text-base md:text-lg max-w-md font-light leading-relaxed mb-8">
-            탄탄한 기본기를 바탕으로 끊임없이 배우고, 더 나은 구조를 고민하는 개발자입니다.
+            제가 열정을 쏟는 <strong class="text-white font-medium">관심 분야</strong>, 손수 구현한 <strong class="text-white font-medium">만든 작품</strong>, 그리고 일상을 채우는 <strong class="text-white font-medium">취미</strong>를 소개합니다.
           </p>
           <div class="flex gap-4 items-center flex-wrap">
-            <a href="portfolio.html"
+            <a href="interests.html"
               class="px-7 py-3.5 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition-colors">
-              프로젝트 보기
+              관심 분야 보기
             </a>
-            <a href="info.html"
+            <a href="works.html"
               class="px-7 py-3.5 border border-white/20 text-white text-sm font-medium rounded-full hover:bg-white/5 transition-colors">
-              공개 정보 보기
+              만든 작품 보기
             </a>
             <a href="https://github.com/sonjunhyek2" target="_blank" rel="noopener"
               class="text-gray-500 hover:text-white transition-colors text-2xl ml-2" aria-label="GitHub 프로필">
@@ -116,7 +120,7 @@
         <div class="hidden md:flex justify-end gsap-hero">
           <div
             class="w-[78%] aspect-square rounded-full border border-white/5 relative overflow-hidden flex items-center justify-center bg-surface">
-            <i class="fa-solid fa-code text-7xl text-white/[0.04]"></i>
+            <i class="fa-solid fa-compass text-7xl text-white/[0.04]"></i>
             <div
               class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-accent/15 blur-[80px] rounded-full">
             </div>
@@ -128,65 +132,65 @@
       </div>
     </section>
 
-    <!-- 사이트 둘러보기 (분할 페이지 바로가기 카드 섹션) -->
+    <!-- 3대 핵심 테마 바로가기 카드 섹션 (관심 분야 · 만든 작품 · 취미) -->
     <section class="py-20 px-6 border-t border-white/5 bg-surface/50">
       <div class="max-w-6xl mx-auto gsap-section">
         <div class="mb-12">
-          <p class="text-xs uppercase tracking-widest text-accent font-medium mb-2">Explore</p>
-          <h2 class="text-3xl font-bold tracking-tight text-white">페이지 둘러보기</h2>
-          <p class="text-gray-500 text-sm font-light mt-1">원하시는 영역을 선택하여 상세 내용을 확인하세요.</p>
+          <p class="text-xs uppercase tracking-widest text-accent font-medium mb-2">Highlights</p>
+          <h2 class="text-3xl font-bold tracking-tight text-white">나를 표현하는 3가지</h2>
+          <p class="text-gray-500 text-sm font-light mt-1">관심 분야, 만든 작품, 취미를 각각 확인해 보세요.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
 
-          <!-- 카드 1: 이력 -->
-          <a href="history.html"
+          <!-- 카드 1: 관심 분야 -->
+          <a href="interests.html"
             class="group p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between hover:-translate-y-1">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-xl text-white mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
-                <i class="fa-solid fa-timeline"></i>
+                <i class="fa-solid fa-lightbulb"></i>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">이력 <span class="text-gray-500 text-sm font-normal">History</span></h3>
+              <h3 class="text-xl font-bold text-white mb-2">관심 분야 <span class="text-gray-500 text-sm font-normal">Interests</span></h3>
               <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                학력, 정보처리기사 및 CS 학습 이력, Core 기술 스택을 타임라인으로 확인하실 수 있습니다.
+                시스템 아키텍처, 컴퓨터 사이언스 기본기, 인터랙티브 웹 디자인 등 탐구하고 있는 주제들입니다.
               </p>
             </div>
             <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors font-medium">
-              이력 페이지로 이동 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+              관심 분야 보기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
             </span>
           </a>
 
-          <!-- 카드 2: 포트폴리오 -->
-          <a href="portfolio.html"
+          <!-- 카드 2: 만든 작품 -->
+          <a href="works.html"
             class="group p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between hover:-translate-y-1">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-xl text-white mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
-                <i class="fa-solid fa-layer-group"></i>
+                <i class="fa-solid fa-cubes"></i>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">포트폴리오 <span class="text-gray-500 text-sm font-normal">Portfolio</span></h3>
+              <h3 class="text-xl font-bold text-white mb-2">만든 작품 <span class="text-gray-500 text-sm font-normal">Works</span></h3>
               <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                TutorBridge, Firstboot-1 등 문제 해결과 아키텍처 중심의 주요 프로젝트 쇼케이스입니다.
+                과외 매칭 플랫폼 TutorBridge, 첫 웹앱 Firstboot-1 등 직접 설계하고 구현한 프로젝트 작품들입니다.
               </p>
             </div>
             <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors font-medium">
-              프로젝트 보러가기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+              만든 작품 보러가기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
             </span>
           </a>
 
-          <!-- 카드 3: 공개 정보 -->
-          <a href="info.html"
+          <!-- 카드 3: 취미 -->
+          <a href="hobbies.html"
             class="group p-8 rounded-3xl bg-surface border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between hover:-translate-y-1">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-xl text-white mb-6 group-hover:bg-accent/20 group-hover:text-accent transition-colors">
-                <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-heart"></i>
               </div>
-              <h3 class="text-xl font-bold text-white mb-2">공개 정보 <span class="text-gray-500 text-sm font-normal">Public Info</span></h3>
+              <h3 class="text-xl font-bold text-white mb-2">취미 <span class="text-gray-500 text-sm font-normal">Hobbies</span></h3>
               <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                채용 담당자를 위해 정의한 페이지의 대상과 목적, 공개 및 비공개 정보 목록을 확인합니다.
+                알고리즘 퍼즐 풀기, 기술 블로그 읽기, 산책과 음악 감상 등 일상 속에서 즐기는 활동들입니다.
               </p>
             </div>
             <span class="inline-flex items-center gap-2 text-sm text-accent group-hover:text-white transition-colors font-medium">
-              공개 정책 확인 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+              취미 살펴보기 <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
             </span>
           </a>
 
